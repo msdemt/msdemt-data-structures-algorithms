@@ -45,7 +45,8 @@ public class Main {
     }
 
     /**
-     * 方法二实现求第N个斐波那契数
+     * for循环实现求第N个斐波那契数
+     * 时间复杂度为O(n)
      *
      * @param n
      * @return
@@ -61,6 +62,36 @@ public class Main {
             second = sum;
         }
         return second;
+    }
+
+    /**
+     * 使用while循环实现求第N个斐波那契数
+     * 时间复杂度为O(n)
+     * 循环体中节省一个局部变量（sum），使用while循环条件中节省一个局部变量
+     * @param n
+     * @return
+     */
+    public static int fib3(int n) {
+        if (n <= 1) return n;
+        int first = 0;
+        int second = 1;
+        while (n-- > 1) {
+            second += first;
+            first = second - first;
+        }
+        return second;
+    }
+
+    /**
+     * 使用线性代数实现求第N个斐波那契数
+     * 时间复杂度为O(1)
+     *
+     * @param n
+     * @return
+     */
+    public static int fib4(int n) {
+        double c = Math.sqrt(5);
+        return (int) ((Math.pow((1 + c) / 2, n) - Math.pow((1 - c) / 2, n)) / c);
     }
 
 
@@ -98,9 +129,9 @@ public class Main {
         // 1 + 2n + n * (1 + 3n)
         // 1 + 2n + n + 3n^2
         // 3n^2 + 3n + 1
-        // O(n^2)
+        // 时间复杂度：O(n^2)
 
-        // O(n)
+        // 空间复杂度：O(n)
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 System.out.println("test");
@@ -163,6 +194,16 @@ public class Main {
         int[] array = new int[n];
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i] + c);
+        }
+    }
+
+    //时间复杂度为O(n+k)
+    public static void test(int n, int k) {
+        for (int i = 0; i < n; i++) {
+            System.out.println("test");
+        }
+        for (int i = 0; i < k; i++) {
+            System.out.println("test");
         }
     }
 }

@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>01-复杂度</artifactId>
+    <artifactId>02-DynamicArray</artifactId>
 
 
 </project>
