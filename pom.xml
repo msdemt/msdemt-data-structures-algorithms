@@ -14,6 +14,8 @@
         <module>03-LinkedList</module>
         <module>04-Stack</module>
         <module>05-Queue</module>
+        <module>06-BinaryTree</module>
+        <module>00-leetcode</module>
     </modules>
 
     <properties>
